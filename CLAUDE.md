@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important: Review Before Each Session
+1. **TODO.md** - Check the current task list and priorities
+2. **HISTORY.md** - Review previous session requests and work completed
+
 ## Project Overview
 
 This is a React Single Page Application (SPA) generated from a Figma design (https://www.figma.com/design/g0Ma68QTq3Jw2rTyyXdSwW/Stealth-Company-Webpage). It's built with modern web technologies and follows a component-based architecture.
@@ -59,3 +63,10 @@ When creating or modifying components:
 - This is a frontend-only application with no backend integration
 - The project was generated from Figma, so some component names may reference Figma frames
 - The Guidelines.md file is available for project-specific design system rules
+
+## Project Documentation
+
+- **TODO.md** - Current task list with priorities (High/Medium/Low)
+- **HISTORY.md** - Session history documenting all user requests and work completed
+- **README.md** - Basic project setup instructions
+- **Guidelines.md** - Template for adding project-specific design guidelines
