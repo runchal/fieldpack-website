@@ -1,0 +1,61 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is a React Single Page Application (SPA) generated from a Figma design (https://www.figma.com/design/g0Ma68QTq3Jw2rTyyXdSwW/Stealth-Company-Webpage). It's built with modern web technologies and follows a component-based architecture.
+
+## Development Commands
+
+- **Install dependencies**: `npm install`
+- **Start development server**: `npm run dev` (opens http://localhost:3000 automatically)
+- **Build for production**: `npm run build` (outputs to `build` directory)
+
+## Tech Stack
+
+- **Core**: React 18.3.1 + TypeScript
+- **Build Tool**: Vite 6.3.5 with SWC for fast compilation
+- **Routing**: React Router DOM
+- **UI Components**: Radix UI (complete suite of accessibility-first primitives)
+- **Styling**: Tailwind CSS (via tailwind-merge and class-variance-authority)
+- **Icons**: Lucide React
+- **Forms**: React Hook Form
+- **Additional Libraries**: Motion (animations), Recharts (charts), Embla Carousel, Sonner (toasts), Vaul (drawers)
+
+## Architecture
+
+### Component Organization
+- `/src/components/ui/`: Reusable UI primitives (45+ components based on Radix UI)
+- `/src/components/`: Feature-specific components (navigation, hero sections, footer, etc.)
+- `/src/pages/`: Page components that compose multiple sections
+- `/src/components/figma/`: Figma-specific components and utilities
+
+### Routing Structure
+- `/` - HomePage (hero, missions, about, contact sections)
+- `/about` - AboutPage
+- All undefined routes redirect to home
+
+### Key Patterns
+1. **Component Variants**: Uses class-variance-authority for managing component styles
+2. **Accessibility**: All UI components are built on Radix UI primitives for ARIA compliance
+3. **Imports**: Use the `@/` alias for src directory imports (configured in vite.config.ts)
+4. **Styling**: Components use Tailwind utility classes with tailwind-merge for class management
+
+## Important Configuration
+
+The `vite.config.ts` contains extensive package aliases for all dependencies (required for Figma export compatibility). When adding new dependencies, you may need to add corresponding aliases.
+
+## Component Guidelines
+
+When creating or modifying components:
+1. Follow the existing pattern of using Radix UI primitives where possible
+2. Use the existing UI components in `/src/components/ui/` before creating new ones
+3. Maintain consistency with the current styling approach (Tailwind utilities)
+4. Components should be self-contained and reusable
+
+## Notes
+
+- This is a frontend-only application with no backend integration
+- The project was generated from Figma, so some component names may reference Figma frames
+- The Guidelines.md file is available for project-specific design system rules
