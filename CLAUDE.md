@@ -58,6 +58,37 @@ When creating or modifying components:
 3. Maintain consistency with the current styling approach (Tailwind utilities)
 4. Components should be self-contained and reusable
 
+## CRITICAL: Centralized Content Management
+
+**🚨 IMPORTANT: This project uses a centralized content system that MUST be preserved when making design changes.**
+
+### When Working with Figma Updates:
+1. **NEVER hardcode content directly in components**
+2. **ALWAYS import content from `../content/site-content.ts`**
+3. **Before replacing any component, extract its content to site-content.ts first**
+
+### Required Pattern for All Components:
+```typescript
+import { siteContent } from '../content/site-content';
+
+export function MyComponent() {
+  const { sectionName } = siteContent;
+  
+  return (
+    <div>
+      <h1>{sectionName.title}</h1>
+      <p>{sectionName.description}</p>
+    </div>
+  );
+}
+```
+
+### When Adding New Components from Figma:
+1. Identify all text/content in the new component
+2. Add the content to `site-content.ts` under appropriate section
+3. Replace hardcoded strings with dynamic content references
+4. Test that content editing still works via `site-content.ts`
+
 ## Notes
 
 - This is a frontend-only application with no backend integration
@@ -68,5 +99,7 @@ When creating or modifying components:
 
 - **TODO.md** - Current task list with priorities (High/Medium/Low)
 - **HISTORY.md** - Session history documenting all user requests and work completed
+- **CONTENT-EDITING.md** - Guide for editing website content via site-content.ts
+- **FIGMA-MIGRATION-GUIDE.md** - Step-by-step process for preserving centralized content when updating from Figma
 - **README.md** - Basic project setup instructions
 - **Guidelines.md** - Template for adding project-specific design guidelines
